@@ -1,0 +1,27 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Run Command
+      run: |
+        dig @1.1.1.1 teamcity.heartlandapps.net
+        curl -w "Type: %{content_type}\nCode: %{response_code}\n" https://teamcity.heartlandapps.net/app/webhooks/githubapp -v
+        echo 'done!'
