@@ -25,3 +25,4 @@ jobs:
         dig @1.1.1.1 teamcity.heartlandapps.net
         ping teamcity.heartlandapps.net
         curl https://teamcity.heartlandapps.net/app/webhooks/githubapp -v
+        echo 'done!'
