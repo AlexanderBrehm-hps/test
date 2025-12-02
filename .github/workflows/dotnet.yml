@@ -23,6 +23,5 @@ jobs:
     - name: Run Command
       run: |
         dig @1.1.1.1 teamcity.heartlandapps.net
-        ping teamcity.heartlandapps.net
-        curl https://teamcity.heartlandapps.net/app/webhooks/githubapp -v
+        curl -w "Type: %{content_type}\nCode: %{response_code}\n" https://teamcity.heartlandapps.net/app/webhooks/githubapp -v
         echo 'done!'
