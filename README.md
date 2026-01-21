@@ -1,4 +1,4 @@
-# Test foobar
+# Test fizz
 
 Test app made for checking Github webhook integrations.
 
