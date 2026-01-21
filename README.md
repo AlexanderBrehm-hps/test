@@ -1,4 +1,4 @@
-# Test foo
+# Test foobar
 
 Test app made for checking Github webhook integrations.
 
